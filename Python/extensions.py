@@ -20,4 +20,4 @@ def changeExtensions(inputPath, new_extension, old_extension):
         print("")
         return False
     
-#changeExtensions(r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Amplicon sequences", ".fasta", ".txt")
+#changeExtensions(r"C:\Users\Jasper\Desktop\01 pJETA101\Amplicon FASTAS\Amplicon sequences", ".fasta", ".txt")
