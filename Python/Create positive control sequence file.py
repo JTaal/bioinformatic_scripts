@@ -1,7 +1,6 @@
 from genericpath import isfile
 from os import listdir
 from os.path import isfile, join
-from xmlrpc.client import FastMarshaller
 from Bio import SeqIO
 #from Bio.Seq import MutableSeq, Seq
 
@@ -9,16 +8,17 @@ from Bio import SeqIO
 """
 #paths
 #inputpath = input("Give folder:")
-amplicon_filepath = r"C:\Users\Jasper\Desktop\01 pJETA101\Amplicon FASTAS\Amplicon sequences"
-controls_filepath = r"C:\Users\Jasper\Desktop\01 pJETA101\Amplicon FASTAS\Control sequences"
-digest_enzyme_filepath = r"C:\Users\Jasper\Desktop\01 pJETA101\Amplicon FASTAS\Digestion sites\Fermentas"
-output_path = r"C:\Users\Jasper\Desktop\01 pJETA101\Amplicon FASTAS\Final sequence"
-
+amplicon_filepath = r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Amplicon sequences"
+controls_filepath = r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Control sequences"
+digest_enzyme_filepath = r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Digestion sites\Fermentas"
+output_path = r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Final sequence"
 
 #enzyme names
 enzyme_name_main = "XhoI" 
-enzyme_name_5_prime = "Eco24I"
-enzyme_name_3_prime = "LguI"
+enzyme_name_5_prime = "ApaI"
+enzyme_name_3_prime = "SmaI"
+primer_sequence_5_prime = "CACCATTGGCAATGAGCGGTTC"
+primer_sequence_3_prime = "ACGTGGACATCCGCAAAGACCT"
 """_______________Code______________________________________________________________________________________________________________________________________________
 """
 
@@ -56,7 +56,8 @@ control_ACE = SeqIO.read(controls_filepath + "\\ACE.fasta", "fasta").upper()
 control_RNaseP = SeqIO.read(controls_filepath + "\\RNaseP Celera & KDX.fasta", "fasta").upper()
 
 #add 5' tail as unique digestion site/ACE/RNase
-output_file += enzyme_5_prime_sequence + control_ACE.seq + control_RNaseP.seq
+head_5_prime_insert = enzyme_5_prime_sequence + primer_sequence_5_prime + enzyme_main_sequence + control_ACE.seq + control_RNaseP.seq 
+output_file += head_5_prime_insert
 
 #create orderingsnumber variable
 orderingsnumber = 0
@@ -71,14 +72,16 @@ for filename in filesInFolder:
             amplicon_list.append(str(orderingsnumber) + ". " + filename_only + ": " + str(len(record.seq)) + "bp" + ": " + record.description + ": " + record.seq)
             output_file += enzyme_main_sequence.upper()
             output_file += str(record.seq.upper())
-        
     else:
         print(filename,"is not a .fasta file.")
         continue
 
-#add 3' tail as RNase/ACE/unique digestion site
-output_file += enzyme_main_sequence + control_RNaseP.seq + control_ACE.seq + enzyme_3_prime_sequence 
+print(output_file)
 
+#The loop doesn't insert a digestionsite after an amplicon so the main digest has to be added at the tail
+#add 3' tail as RNase/ACE/unique digestion site
+tail_3_prime_insert = enzyme_main_sequence + control_RNaseP.seq + control_ACE.seq + enzyme_main_sequence + primer_sequence_3_prime + enzyme_3_prime_sequence 
+output_file += tail_3_prime_insert
 #mutable_fasta_sequence = MutableSeq(output_file)
 #fasta_sequence = Seq(output_file)
 
@@ -115,4 +118,3 @@ print("Amplicon list written to", amplicon_list_outputpath)
 #>>> record.description
 #'gi|45478711|ref|NC_005816.1| Yersinia pestis biovar Microtus str. 91001 plasmid pPCP1,
 #complete sequence'
-

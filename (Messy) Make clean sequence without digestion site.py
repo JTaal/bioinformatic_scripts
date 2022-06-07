@@ -7,9 +7,9 @@ from Bio import SeqIO
 """
 
 #inputpath = input("Give folder:")
-amplicon_filepath = r"C:\Users\Jasper\Desktop\01 pJETA101\Amplicon FASTAS\Amplicon sequences"
+amplicon_filepath = r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Amplicon sequences"
 #digest_enzyme_filepath = r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Digestion sites\Alator Bioscience"
-output_path = r"C:\Users\Jasper\Desktop\01 pJETA101\Amplicon FASTAS\Final sequence"
+output_path = r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Final sequence"
 
 """_______________Code______________________________________________________________________________________________________________________________________________
 """
