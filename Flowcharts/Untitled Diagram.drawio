@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-07T14:00:22.177Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="8QdR50bnyJyXcGftxALq" version="19.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-07T14:01:34.765Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="TZ1lCLEcEjwgMJMfYWE2" version="19.0.1" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
     <mxGraphModel dx="3848" dy="2346" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -49,8 +49,8 @@
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-18" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;.XLSX&lt;/span&gt;&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=1;gradientColor=#ffffff;gradientDirection=north;" vertex="1" parent="1">
           <mxGeometry x="-180" y="510" width="70" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="Lheqyd3v5UKoI2d5zXlv-21" value="&lt;span style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Calculate Oligonucleotide and TE Buffer Volumes&lt;/font&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="440" y="150" width="160" height="160" as="geometry" />
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-21" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Production of QTRACE INDEL Assays from existing qualified bulk intermediates&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="300" y="-570" width="160" height="160" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-44" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Helvetica;fontSize=18;strokeColor=default;" edge="1" parent="1" source="Lheqyd3v5UKoI2d5zXlv-22" target="Lheqyd3v5UKoI2d5zXlv-24">
           <mxGeometry relative="1" as="geometry" />
@@ -137,13 +137,16 @@
           <mxGeometry x="350" y="-610" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-64" value="3." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;" vertex="1" parent="1">
-          <mxGeometry x="440" y="-610" width="60" height="30" as="geometry" />
+          <mxGeometry x="540" y="-610" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-65" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="Lheqyd3v5UKoI2d5zXlv-63" target="Lheqyd3v5UKoI2d5zXlv-63">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-66" value="8." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;" vertex="1" parent="1">
           <mxGeometry x="-490" y="-300" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-69" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Production of a Reference Assay from oligonucleotides&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="490" y="-570" width="160" height="160" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
