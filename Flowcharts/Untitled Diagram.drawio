@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-06-07T13:19:54.815Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="aWShlPpQ3aHCrVipxfne" version="19.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-07T13:30:32.457Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="WBCw0cbhmvqEkSV5bLpa" version="19.0.1" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
-    <mxGraphModel dx="3848" dy="2346" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="4535" dy="2720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -59,22 +59,28 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-22" value="Oligos" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;strokeColor=default;strokeWidth=1;fillColor=default;gradientColor=#ffffff;gradientDirection=north;" vertex="1" parent="1">
-          <mxGeometry x="-830" y="-680" width="70" height="110" as="geometry" />
+          <mxGeometry x="-370" y="-620" width="70" height="110" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Helvetica;fontSize=18;strokeColor=default;" edge="1" parent="1" source="Lheqyd3v5UKoI2d5zXlv-23" target="Lheqyd3v5UKoI2d5zXlv-24">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-23" value="40X Assay" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;strokeColor=default;strokeWidth=1;fillColor=default;gradientColor=#ffffff;gradientDirection=north;" vertex="1" parent="1">
-          <mxGeometry x="-760" y="-480" width="70" height="110" as="geometry" />
+          <mxGeometry x="-300" y="-420" width="70" height="110" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-37" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=18;strokeColor=default;" edge="1" parent="1" source="Lheqyd3v5UKoI2d5zXlv-24" target="Lheqyd3v5UKoI2d5zXlv-36">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-24" value="5X Assay" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;strokeColor=default;strokeWidth=1;fillColor=default;gradientColor=#ffffff;gradientDirection=north;" vertex="1" parent="1">
-          <mxGeometry x="-900" y="-480" width="70" height="110" as="geometry" />
+          <mxGeometry x="-440" y="-420" width="70" height="110" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-36" value="Plates" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;strokeColor=default;strokeWidth=1;fillColor=default;gradientColor=#ffffff;gradientDirection=north;" vertex="1" parent="1">
-          <mxGeometry x="-1070" y="-360" width="120" height="60" as="geometry" />
+          <mxGeometry x="-610" y="-300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-39" value="Oligos" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;strokeColor=default;strokeWidth=1;fillColor=default;gradientColor=#ffffff;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="-660" width="80" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-40" value="RNaseP" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;strokeColor=default;strokeWidth=1;fillColor=default;gradientColor=#ffffff;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="-800" y="-500" width="80" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
