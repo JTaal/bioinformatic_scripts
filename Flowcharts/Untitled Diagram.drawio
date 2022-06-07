@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-06-07T11:29:30.172Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="Ip0htS3yTKTIlkF8FvEb" version="19.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-07T11:55:34.481Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="ddeCAmH4fP6Lk-k_8-T2" version="19.0.1" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
-    <mxGraphModel dx="2061" dy="1122" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3161" dy="1122" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="4ec97bd9e5d20128-1" value="" style="line;strokeWidth=2;html=1;fillColor=none;fontSize=28;fontColor=#004D99;strokeColor=#004D99;" parent="1" vertex="1">
-          <mxGeometry x="40" y="400" width="1000" height="10" as="geometry" />
+          <mxGeometry x="100" y="400" width="940" height="10" as="geometry" />
         </mxCell>
         <mxCell id="4ec97bd9e5d20128-9" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#61BAFF;fontSize=28;fontColor=#004D99;strokeWidth=3;strokeColor=#004D99;" parent="1" vertex="1">
           <mxGeometry x="190" y="395" width="20" height="20" as="geometry" />
@@ -19,11 +19,17 @@
         <mxCell id="4ec97bd9e5d20128-13" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#61BAFF;fontSize=28;fontColor=#004D99;strokeWidth=3;strokeColor=#004D99;" parent="1" vertex="1">
           <mxGeometry x="870" y="395" width="20" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="Lheqyd3v5UKoI2d5zXlv-1" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=1;gradientColor=#ffffff;gradientDirection=north;" vertex="1" parent="1">
-          <mxGeometry x="165" y="450" width="70" height="100" as="geometry" />
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;.XLSX&lt;/span&gt;&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=1;gradientColor=#ffffff;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="165" y="590" width="70" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="Lheqyd3v5UKoI2d5zXlv-3" value="" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" vertex="1" parent="1">
-          <mxGeometry x="165" y="250" width="70" height="100" as="geometry" />
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="130" width="70" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-5" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;.PDF&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;gradientDirection=south;gradientColor=#ea6b66;" vertex="1" parent="1">
+          <mxGeometry x="30" y="355" width="70" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-8" value="QTRACE® Assay Tube&lt;br&gt;Manufacturing Protocol&lt;br&gt;BMR002" style="text;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="460" width="130" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
