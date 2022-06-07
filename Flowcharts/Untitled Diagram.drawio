@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-06-07T14:20:33.603Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="74G9rpC_vI9-6v9Kx2l8" version="19.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-07T14:20:56.847Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="ZpDvPWqJY7xljkTtAqTO" version="19.0.1" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
-    <mxGraphModel dx="3525" dy="3870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3525" dy="3020" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -194,8 +194,8 @@
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-90" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Volume of Assay stock required = 5 / (stock fold concentration) x Volume of 5x Assay required&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="-200" y="-1080" width="515.25" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Lheqyd3v5UKoI2d5zXlv-96" value="&lt;font style=&quot;font-size: 41px;&quot;&gt;QTRACE Tube Production&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;sketch=0;fontSize=30;" vertex="1" parent="1">
-          <mxGeometry x="-207" y="-1710" width="528" height="90" as="geometry" />
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-96" value="&lt;font style=&quot;font-size: 41px;&quot;&gt;QTRACE Tube Production&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;sketch=0;fontSize=30;fillColor=#FFFDF3;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="-207" y="-1650" width="528" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
