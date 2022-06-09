@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-06-09T11:13:52.535Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="m2feeQQtjkbt1fmsujwY" version="19.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-09T11:34:05.436Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36" etag="MaPZMKhyIH_HesfT0RVW" version="19.0.2" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
-    <mxGraphModel dx="2750" dy="2598" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2686" dy="2563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -22,7 +22,7 @@
             <mxPoint x="87" y="-1312" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Lheqyd3v5UKoI2d5zXlv-78" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=30;" parent="1" edge="1">
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-78" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=30;" parent="1" edge="1" source="Lheqyd3v5UKoI2d5zXlv-8">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="277" y="-1342" as="sourcePoint" />
             <mxPoint x="277" y="-1312" as="targetPoint" />
@@ -31,8 +31,8 @@
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-95" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=30;" parent="1" source="Lheqyd3v5UKoI2d5zXlv-8" target="Lheqyd3v5UKoI2d5zXlv-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Lheqyd3v5UKoI2d5zXlv-8" value="QTRACE® Assay Tube&lt;br&gt;Manufacturing Protocol&lt;br&gt;BMR002&lt;br&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
-          <mxGeometry x="217" y="-1420" width="120" height="80" as="geometry" />
+        <mxCell id="Lheqyd3v5UKoI2d5zXlv-8" value="BMR002 QTRACE® Assay Tube&lt;br&gt;Manufacturing Protocol" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
+          <mxGeometry x="217" y="-1420" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-12" value="List" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;shadow=1;sketch=0;fontFamily=Helvetica;fontSize=14;fillColor=#D9F5FC;gradientColor=#ffffff;gradientDirection=south;" parent="1" vertex="1">
           <mxGeometry x="-690" y="-600" width="140" height="120" as="geometry" />
@@ -151,7 +151,7 @@
           <mxGeometry x="262" y="-1310" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-64" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;3.&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;" parent="1" vertex="1">
-          <mxGeometry x="452" y="-1310" width="30" height="30" as="geometry" />
+          <mxGeometry x="452" y="-1309" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-65" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="Lheqyd3v5UKoI2d5zXlv-63" target="Lheqyd3v5UKoI2d5zXlv-63" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -236,38 +236,41 @@
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-113" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
           <mxGeometry x="989" y="-1530" width="70" height="100" as="geometry" />
         </mxCell>
+        <mxCell id="_ofi-eHrRNwAqA-1qhmZ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Lheqyd3v5UKoI2d5zXlv-114" target="_ofi-eHrRNwAqA-1qhmZ-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-114" value="&lt;span style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;BMR001 QTRACE and MultiTRACE Genotyping Plate Manufacturing protocol&lt;/font&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="949" y="-1420" width="150" height="70" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-120" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;QTRACE Genotyping Plate Batch Record Supplement&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
-          <mxGeometry x="810" y="-1080" width="131" height="60" as="geometry" />
+          <mxGeometry x="1009" y="-580" width="131" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-129" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=41;strokeWidth=2;" parent="1" source="Lheqyd3v5UKoI2d5zXlv-121" target="Lheqyd3v5UKoI2d5zXlv-120" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-121" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.PDF&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#f8cecc;strokeColor=#b85450;shadow=1;gradientDirection=south;gradientColor=#ea6b66;" parent="1" vertex="1">
-          <mxGeometry x="840.5" y="-1200" width="70" height="100" as="geometry" />
+          <mxGeometry x="1039.5" y="-690" width="70" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-122" value="&lt;font style=&quot;font-size: 41px;&quot;&gt;Main overview of production&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;sketch=0;fontSize=30;fillColor=#FFFDF3;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="-959" y="-1650" width="528" height="90" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-123" value="MultiTRACE V2 Genotyping Plate Batch Record Supplement" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
-          <mxGeometry x="980" y="-1080" width="131" height="60" as="geometry" />
+          <mxGeometry x="870" y="-940" width="131" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-124" value="MultiTRACE V3 Genotyping Plate Batch Record Supplement" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
-          <mxGeometry x="1149.5" y="-1080" width="131" height="60" as="geometry" />
+          <mxGeometry x="1059" y="-940" width="131" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-128" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=41;strokeWidth=2;" parent="1" source="Lheqyd3v5UKoI2d5zXlv-125" target="Lheqyd3v5UKoI2d5zXlv-123" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-125" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
-          <mxGeometry x="1010.5" y="-1200" width="70" height="100" as="geometry" />
+          <mxGeometry x="900.5" y="-1050" width="70" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-127" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=41;strokeWidth=2;" parent="1" source="Lheqyd3v5UKoI2d5zXlv-126" target="Lheqyd3v5UKoI2d5zXlv-124" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Lheqyd3v5UKoI2d5zXlv-126" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
-          <mxGeometry x="1180" y="-1200" width="70" height="100" as="geometry" />
+          <mxGeometry x="1089.5" y="-1050" width="70" height="100" as="geometry" />
         </mxCell>
         <mxCell id="_ofi-eHrRNwAqA-1qhmZ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_ofi-eHrRNwAqA-1qhmZ-1" target="_ofi-eHrRNwAqA-1qhmZ-2">
           <mxGeometry relative="1" as="geometry" />
@@ -280,6 +283,28 @@
         </mxCell>
         <mxCell id="_ofi-eHrRNwAqA-1qhmZ-4" value="8." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;" vertex="1" parent="1">
           <mxGeometry x="-310" y="-1320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_ofi-eHrRNwAqA-1qhmZ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=40;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="_ofi-eHrRNwAqA-1qhmZ-5" target="Lheqyd3v5UKoI2d5zXlv-126">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1130" y="-1200" />
+              <mxPoint x="1130" y="-1085" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ofi-eHrRNwAqA-1qhmZ-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=20;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="_ofi-eHrRNwAqA-1qhmZ-5" target="Lheqyd3v5UKoI2d5zXlv-125">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="-1200" />
+              <mxPoint x="920" y="-1085" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_ofi-eHrRNwAqA-1qhmZ-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Production of Genotyping plates&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="944" y="-1280" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_ofi-eHrRNwAqA-1qhmZ-6" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;6.&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1009" y="-1310" width="30" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
