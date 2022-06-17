@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-17T11:29:57.224Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="sXMiF9sNntipc3a2VIfr" version="20.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-17T11:31:04.702Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="BHZV6jB9hyd97DWDAMrK" version="20.0.1" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
     <mxGraphModel dx="2522" dy="3324" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -469,8 +469,8 @@
         <mxCell id="Ao-hXRzXk7e3asPkagsK-34" value="40X Assay" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=18;strokeColor=#82b366;strokeWidth=1;fillColor=#d5e8d4;gradientDirection=north;" parent="1" vertex="1">
           <mxGeometry x="-620" y="-200" width="70" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="4eFiIwckIy94ooC66Js5-7" value="&lt;div style=&quot;&quot;&gt;BMR002 QTRACE Assay Batch Record&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" vertex="1" parent="1">
-          <mxGeometry x="1045" y="-815" width="131" height="50" as="geometry" />
+        <mxCell id="4eFiIwckIy94ooC66Js5-7" value="&lt;div style=&quot;&quot;&gt;JETA QMS\Quality Records\QC Data\Batch Records\Assay Batch Records&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1037.5" y="-815" width="146" height="65" as="geometry" />
         </mxCell>
         <mxCell id="4eFiIwckIy94ooC66Js5-11" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=41;strokeWidth=2;" edge="1" parent="1" target="4eFiIwckIy94ooC66Js5-7">
           <mxGeometry relative="1" as="geometry">
