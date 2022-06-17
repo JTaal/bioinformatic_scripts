@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-06-17T11:40:29.714Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="yOVFER04M4MHGaiC4_06" version="20.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-17T14:41:00.419Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36" etag="hlOJfnSDlryJyUOEdUJ3" version="20.0.1" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
-    <mxGraphModel dx="2082" dy="3084" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3526" dy="3870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -508,6 +508,18 @@
         </mxCell>
         <mxCell id="4eFiIwckIy94ooC66Js5-16" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Folder_Blank.svg;" vertex="1" parent="1">
           <mxGeometry x="1818.61" y="-906.97" width="101" height="81.97" as="geometry" />
+        </mxCell>
+        <mxCell id="4eFiIwckIy94ooC66Js5-19" value="&lt;div style=&quot;&quot;&gt;Finished Product QC&lt;br&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="2486" y="-809.01" width="121.59" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4eFiIwckIy94ooC66Js5-20" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=41;strokeWidth=2;" edge="1" parent="1" target="4eFiIwckIy94ooC66Js5-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2549.5899999999997" y="-839.01" as="sourcePoint" />
+            <mxPoint x="2379.4100000000003" y="-784.01" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4eFiIwckIy94ooC66Js5-21" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/general/Folder_Blank.svg;" vertex="1" parent="1">
+          <mxGeometry x="2496.29" y="-900.98" width="101" height="81.97" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
