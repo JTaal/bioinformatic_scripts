@@ -180,4 +180,114 @@ moviedictionary = {}
 for movie in movies:
     moviedictionary[movie] = ratings.pop(0)
     print(movie, round(average(moviedictionary.get(movie)), 1))
+
+#create set with the set() function
+helloset = set( "hello world" )
+print( helloset )
+
+#sort a set and use of for loop
+fruitset = { "apple", "banana", "cherry", "durian", "mango" }
+for element in fruitset:
+    print( element )
+print()
+fruitlist = list( fruitset )
+fruitlist.sort()
+for element in fruitlist:
+    print( element )
+
+fruitset = { "apple", "banana", "cherry", "durian", "mango" }
+print( fruitset )
+fruitset.add( "apple" )
+fruitset.add( "elderberry" )
+print( fruitset )
+fruitset.update( ["apple","apple","apple","strawberry",
+"strawberry","apple","mango"] )
+print( fruitset )
+
+#remove() might error if not in the set , discard() will either discard or ignore, and clear() the entire list
+# union() 
+
+fruit1 = { "apple", "banana", "cherry" }
+fruit2 = { "banana", "cherry", "durian" }
+fruitunion = fruit1.union( fruit2 )
+print( fruitunion )
+fruitunion = fruit1 | fruit2
+print( fruitunion )
+
+fruit1 = { "apple", "banana", "cherry" }
+fruit2 = { "banana", "cherry", "durian" }
+fruitintersection = fruit1.intersection( fruit2 )
+print( fruitintersection )
+fruitintersection = fruit1 & fruit2
+print( fruitintersection )
+
+fruit1 = { "apple", "banana", "cherry" }
+fruit2 = { "banana", "cherry", "durian" }
+fruitdifference = fruit1.difference( fruit2 )
+print( fruitdifference )
+fruitdifference = fruit1 - fruit2
+print( fruitdifference )
+fruitdifference = fruit2 - fruit1
+print( fruitdifference )
+
+#exercise 14.2.9
+wordlist= set({})
+words = ["YOLO", "oboy"]
+
+for word in words:
+    wordlist.update(word.upper())
+
+
+print(wordlist)
+
+
+fruit1 = { "apple", "banana", "cherry" }
+fruit2 = { "banana", "cherry", "durian" }
+
+
+print(fruit2.difference(fruit1) | fruit1.difference(fruit2))
+
+allthings = {"Socrates", "Plato", "Eratosthenes", "Zeus", "Hera", "Athens", "Acropolis", "Cat", "Dog"}
+men = {"Socrates", "Plato", "Eratosthenes"}
+mortalthings = {"Socrates","Plato","Eratosthenes","Cat","Dog"}
+
+
+#a all men are mortal
+print("all men are mortal: ", men.issubset(mortalthings))
+#b Socrates is a man
+socrates = men.intersection("socrates")
+print("Socrates is a man: ", socrates.issubset(men))
+#c Socrates is mortal
+print("Socrates is mortal: ", socrates.issubset(mortalthings))
+#d there are mortal things that are not men
+print("there are mortal things that are not men: ", men.issubset(mortalthings))
+#e there are things that are not mortal
+print("there are things that are not mortal: ", mortalthings.issubset(allthings))
+
+list_3 = [i for i in range(1,1001) if i%3 == 0]
+list_7 = [i for i in range(1,1001) if i%7 == 0]
+list_11 = [i for i in range(1,1001) if i%11 == 0]
+
+lists = [list_3, list_7, list_11]
+#(a) are divisible by 3, 7, and 11,
+list_3_7_11 = set({})
+
+
+
+for list in lists:
+    list_3_7_11.update(list)
     
+print(list_3_7_11)
+
+
+#(b) are divisible by 3 and 7,but not by 11
+list_3_7 = list_3_7_11 - set(list_11)
+
+print(list_3_7)
+#(c) that are not divisible by 3, 7, or 11.
+
+list1_1000 = set([i for i in range(1,1001)])
+
+anti_list_3_7_11 = list1_1000 - list_3_7_11
+
+print(anti_list_3_7_11)

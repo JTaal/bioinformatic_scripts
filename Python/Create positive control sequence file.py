@@ -16,20 +16,21 @@ output_path = r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Developmen
 #enzyme names
 enzyme_name_main = "XhoI" 
 enzyme_name_5_prime = "ApaI"
-enzyme_name_3_prime = "SmaI"
+enzyme_name_3_prime = "XbaI"
 primer_sequence_5_prime = "CACCATTGGCAATGAGCGGTTC"
 primer_sequence_3_prime = "ACGTGGACATCCGCAAAGACCT"
+
 """_______________Code______________________________________________________________________________________________________________________________________________
 """
 
 #setting up all directory variables
 output_file = ""
-output_filename = "Insertion sequence " + enzyme_name_main +".fasta"
+output_filename = "Insertion sequence " + "Main-" +enzyme_name_main + " 5 prime-" + enzyme_name_5_prime + " 3 prime-" +enzyme_name_3_prime +".fasta"
 output_fileID = ">Insertion sequence "+ enzyme_name_main + "\n"
 output_filepath = output_path + "\\" + output_filename
 
 amplicon_list = []
-amplicon_listname = "List of amplicon order " + enzyme_name_main + ".txt"
+amplicon_listname = "List of amplicon order " + "Main-" + enzyme_name_main + " 5 prime-" + enzyme_name_5_prime + " 3 prime-" + enzyme_name_3_prime + ".txt"
 amplicon_list_outputpath = output_path + "\\" + amplicon_listname
 
 #extract digest enzyme sequences
