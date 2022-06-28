@@ -33,7 +33,7 @@ while True:
         break
     if event == 'Ok':
         # If OK, then need to add the filename to the list of files and also set as the last used filename
-        sg.user_settings_set_entry('-filenames-', list(set(sg.user_settings_get_entry('-filenames-', []) + [values['-FILENAME-'], ])))
+        sg.user_settings_set_entry('-filenames-', sg.user_settings_get_entry('-filenames-', []) + [values['-FILENAME-'], ])
         sg.user_settings_set_entry('-last filename-', values['-FILENAME-'])
         break
     elif event == 'Clear History':

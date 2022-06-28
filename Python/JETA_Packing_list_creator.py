@@ -10,18 +10,53 @@ from os.path import isfile
 
 def JETA_Packing_list_maker():  
     #Unpack dictionaries
+
+
+    """
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            Input 
+    
+    """
+    
+    
+    file_name_dict = {"log_file_name" : "Packing list log.xlsx", 
+    "customer_file_name" : "JETA Packing list customer info.xlsx",
+    "items_file_name" : "Order file.xlsx",
+    "Mother_packinglist_file_name" : "Mother-packing-list.docx"}
+    
+    """
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            functions 
+    
+    """    
     def list_unpacker(folder_list):
         if folder_list == []:
             return folder_list
         else:
-            return folder_list[len(folder_list)-1]
-        
+            #print("list length -1 = " ,len(folder_list)-1, folder_list[len(folder_list)-1], "Folder list: ", folder_list )
+            return folder_list[len(folder_list)-1]        
+
+    
+    """
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            GUI setup
+    
+    """
+    
+
+    
     #Create theme
     sg.theme("DarkTeal9")
     
     #Create dictionaries to loop through pathways while clearing and saving
     clear_dict = {"Clear History log": "-path_log-", "Clear History order": "-path_order-", "Clear History customer": "-path_customer-", "Clear History output": "-path_output-"}
     folder_dict = {"-path_log-": "Log file location", "-path_order-": "Ordered items location", "-path_customer-": "Customer info location", "-path_output-": "Output folder location"}
+    
+    
+    # in case you load in impossible setting use below to clear all the saved pathways
+    #
+    #for event in clear_dict:
+    #    sg.user_settings_set_entry(clear_dict[event], [])
     
     #Create default pathways for initial use
     base_dir = Path(__file__).parent / "required files"
@@ -92,14 +127,19 @@ def JETA_Packing_list_maker():
         #print(event, type(event)) 
         if event == sg.WIN_CLOSED or event == "Exit" or event == "Exit4":
             break   
-           
+            
         if event == "Save":
             for key in folder_dict:
                 #Check if path boxes are empty          
-                if values[folder_dict.get(key)] == "":
+                if values[folder_dict.get(key)] == "" or values[folder_dict.get(key)] in sg.user_settings_get_entry(key, []):
                     continue
                 #Save the new path into the settings with the old list
-                sg.user_settings_set_entry(key, list(set(sg.user_settings_get_entry(key, []) + [values[folder_dict.get(key)] ])))
+                #print("\n\n",key, list(set(sg.user_settings_get_entry(key, []).append( [values[folder_dict.get(key)] ]))))
+                
+                #print("\n\n", sg.user_settings_get_entry(key, []))
+                
+                
+                sg.user_settings_set_entry(key, list(sg.user_settings_get_entry(key, []) + [values[folder_dict.get(key)] ]))
             sg.popup_auto_close("Pathways have been saved!", keep_on_top=True)
             continue
         
@@ -110,7 +150,7 @@ def JETA_Packing_list_maker():
          
         if event == "Clear" or event == "Clear3":
             for key in values:
-                if "Browse" in key:
+                if "Browse" in key or key == '-TAB GROUP-':
                     continue
                 window[key]("")
             continue
