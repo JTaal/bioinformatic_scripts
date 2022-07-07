@@ -16,7 +16,7 @@ output_path = r"D:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Developmen
 #enzyme names
 enzyme_name_main = "XhoI" 
 enzyme_name_5_prime = "ApaI"
-enzyme_name_3_prime = "XbaI"
+enzyme_name_3_prime = "SacII"
 primer_sequence_5_prime = "CACCATTGGCAATGAGCGGTTC"
 primer_sequence_3_prime = "ACGTGGACATCCGCAAAGACCT"
 

@@ -1,28 +1,89 @@
-#GUI creator
-import datetime
 import os
+import datetime
 import PySimpleGUI as sg
 import pandas as pd
+from os import makedirs
 from pathlib import Path
-from os.path import isfile
+from barcode import EAN13
+from docxtpl import DocxTemplate, InlineImage
+from barcode.writer import ImageWriter
+from docx.shared import Mm
+from pathlib import Path
+from docxtpl import DocxTemplate
 
 #sg.theme_previewer()
 
-def JETA_Packing_list_maker():  
-    #Unpack dictionaries
+def isNaN(num):
+    return num != num
+
+def create_barcode(number_string):
+    base_dir = Path(__file__).parent / "barcodes"
+    makedirs(base_dir, exist_ok=True)
+    barcode = EAN13(number_string, writer=ImageWriter())
+    barcode.save(base_dir/number_string)
+    number_filename = number_string + ".png"
+    return str(base_dir/number_filename)
+
+def create_packinglistsheet(customer_info_dict , doc, order_table_dict, output_dir):
+    #Create dates and insert into the input dict
+    today_text = f"{datetime.datetime.now():%d-%m-%Y}"
+    customer_info_dict["DATE"] = today_text
+    today = today_text[8:10] + today_text[3:5] + today_text[:2]
+    shipping_method = " " + customer_info_dict.pop("shipping method")
+
+    #Merge info with table 
+    context = customer_info_dict | order_table_dict
+    #Create packinglist from motherpacking list and input info
+
+    #filter out dead values and insert nothing into them
+    for key in context:
+        if isNaN(context[key]):
+            context.update({key : ""})
+    
+    doc.render(context)
+    doc.save(output_dir + "\\" +  today + " Packing list for " + customer_info_dict["NAME"] + " order " + customer_info_dict["PO"] + shipping_method + ".docx")
+    return
+
+def create_table(doc, Pathway, customername):   
+    row = {}
+    tbl_contents = []
+    
+    order_df = pd.read_excel(Pathway, sheet_name="order")
+    order_list = order_df.to_dict(orient="records")
+    
+    if customername.lower() == "turku":
+        turku = "Build in turkus requirements here"    
+    else:
+        for record in order_list:
+            row["cols"] = [InlineImage(doc, create_barcode(str(record["Barcode"])), 
+                            width=Mm(30), height=Mm(13.2)), record["REF"], 
+                            record["Name"], 
+                            record["Description"], 
+                            record["Category"], 
+                            record["LOT"], 
+                            record["Expiration date"], 
+                            str(record["Qty"]).split("[")[0], 
+                            str(record["Qty"]).split("[")[0], 
+                            "0"
+                            ]
+            tbl_contents.append(row.copy())
+        col_labels = ["Barcode", "REF", "Name", "Description", "Unit", "Lot No.", "Expiry date", "Quantity Ordered", "Quantity Shipped", "Back-order"]
+        
+    context = {"col_labels" : col_labels, "tbl_contents": tbl_contents}
+    return context
 
 
+def JETA_Packing_list_maker():
     """
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            Input 
+            initial input 
     
     """
     
     
-    file_name_dict = {"log_file_name" : "Packing list log.xlsx", 
-    "customer_file_name" : "JETA Packing list customer info.xlsx",
-    "items_file_name" : "Order file.xlsx",
-    "Mother_packinglist_file_name" : "Mother-packing-list.docx"}
+    file_name_dict = {"log" : "Packing list log.xlsx", 
+    "customer" : "JETA Packing list customer info.xlsx",
+    "items" : "Order file.xlsx",}
     
     """
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,17 +104,15 @@ def JETA_Packing_list_maker():
     
     """
     
-
-    
     #Create theme
     sg.theme("DarkTeal9")
     
     #Create dictionaries to loop through pathways while clearing and saving
     clear_dict = {"Clear History log": "-path_log-", "Clear History order": "-path_order-", "Clear History customer": "-path_customer-", "Clear History output": "-path_output-"}
-    folder_dict = {"-path_log-": "Log file location", "-path_order-": "Ordered items location", "-path_customer-": "Customer info location", "-path_output-": "Output folder location"}
+    folder_dict = {"-path_log-": "log file location", "-path_order-": "ordered items location", "-path_customer-": "customer info location", "-path_output-": "output folder location"}
+    customer_input_dict = {"INVOICE_NR": "invoice", "PO": "PO", "DESCRIPTION": "description"}
     
-    
-    # in case you load in impossible setting use below to clear all the saved pathways
+    # in case you load in impossible setting, use below to clear all the saved pathways
     #
     #for event in clear_dict:
     #    sg.user_settings_set_entry(clear_dict[event], [])
@@ -62,16 +121,24 @@ def JETA_Packing_list_maker():
     base_dir = Path(__file__).parent / "required files"
     os.makedirs(base_dir, exist_ok=True)
     
+    #Defaultpathways
+    customer_default_pathway = base_dir / file_name_dict["customer"]
+    #print("\n\n\ncustomer_path:!!!", customer_path, type(customer_path))
+    
     #Create dictionary list for customer names
-    customer_path = base_dir / "JETA Packing list customer info.xlsx"
-    
-    
-    if isfile(customer_path):
-        customerdf = pd.read_excel(customer_path, sheet_name="Customer info")
-        customer_dic_names = customerdf.to_dict(orient="list")
-    else:
-        print("Couldn't load customer information!")
-        customer_dic_names = {"name": ""}
+    customer_path = list_unpacker(sg.user_settings_get_entry("-path_customer-", [customer_default_pathway])) 
+
+    try:
+        if type(customer_path) == str:
+            customerdf = pd.read_excel(customer_path)
+            customer_info_dict_records = customerdf.to_dict(orient="records")
+            customer_dic_names = customerdf.to_dict(orient="list")
+        elif type(customer_path) == list:
+            sg.popup("customer pathway settings are empty.\nPlease select correct customer pathway and restart.", keep_on_top=True)
+            customer_dic_names = {"NAME": ""}
+    except:
+        sg.popup("Couldn't load customer information!", keep_on_top=True)
+        customer_dic_names = {"NAME": ""}
     
     #Create the default invoicing number
     current_time = str(datetime.datetime.today())
@@ -80,41 +147,34 @@ def JETA_Packing_list_maker():
     #Setup the layout of the UI tabs
     Input_Elements = [
         [sg.Text("")],
-        [sg.Text("Customer", size=(12,1)), sg.Combo(customer_dic_names["name"], key="customer name", size=(20, 1))],
+        [sg.Text("customer", size=(12,1)), sg.Combo(customer_dic_names["NAME"], key="customer name", size=(20, 1))],
         [sg.Text("PO Nr.", size=(12,1)), sg.InputText(key= "PO", size=(40, 1))],
         [sg.Text("Invoice Nr.", size = (12,1)), sg.InputText(key="invoice", size=(40, 1), default_text= default_invoice_number)],
         [sg.Text("Description", size = (12,1)), sg.Combo(["Medical kit", "Assays", "Plates"] ,key="description", size=(38, 1))],
         [sg.Text("Shipping method", size = (20,1)), sg.Radio("Ambient", "RadioDemo", default=True, size=(10,1), key="ambient"), sg.Radio("Dry Ice", "RadioDemo", default=False, size=(10,1), key="dry ice")],
         [sg.Text("")],
         [sg.Submit(), sg.Button("Clear"), sg.Exit()]
-
     ]
 
     Settings = [    
         [sg.Text("")],        
-        [sg.Text("Log file", size=(12,1)), sg.Combo(sorted(sg.user_settings_get_entry("-path_log-", [])), 
-            default_value=  list_unpacker(sg.user_settings_get_entry("-path_log-", [])), size=(30, 1), key="Log file location"), sg.FileBrowse(), sg.Button("Clear History", key = "Clear History log")],
-        [sg.Text("Ordered items", size=(12,1)), sg.Combo(sorted(sg.user_settings_get_entry("-path_order-", [])), 
-            default_value= list_unpacker(sg.user_settings_get_entry("-path_order-", [])), size=(30, 1), key="Ordered items location"), sg.FileBrowse(), sg.Button("Clear History", key = "Clear History order")],
-        [sg.Text("Customer sheet", size=(12,1)), sg.Combo(sorted(sg.user_settings_get_entry("-path_customer-", [])), 
-            default_value= list_unpacker(sg.user_settings_get_entry("-path_customer-", [])), size=(30, 1), key="Customer info location"), sg.FileBrowse(), sg.Button("Clear History", key = "Clear History customer")],
-        [sg.Text("Output folder", size=(12,1)), sg.Combo(sorted(sg.user_settings_get_entry("-path_output-", [])), 
-            default_value= list_unpacker(sg.user_settings_get_entry("-path_output-", [])), size=(30, 1), key="Output folder location"), sg.FolderBrowse(), sg.Button("Clear History", key = "Clear History output")],
+        [sg.Text("log file", size=(12,1)), sg.Combo(sorted(sg.user_settings_get_entry("-path_log-", [])), 
+            default_value=  list_unpacker(sg.user_settings_get_entry("-path_log-", [])), size=(30, 1), key="log file location"), sg.FileBrowse(), sg.Button("Clear History", key = "Clear History log")],
+        [sg.Text("ordered items", size=(12,1)), sg.Combo(sorted(sg.user_settings_get_entry("-path_order-", [])), 
+            default_value= list_unpacker(sg.user_settings_get_entry("-path_order-", [])), size=(30, 1), key="ordered items location"), sg.FileBrowse(), sg.Button("Clear History", key = "Clear History order")],
+        [sg.Text("customer sheet", size=(12,1)), sg.Combo(sorted(sg.user_settings_get_entry("-path_customer-", [])), 
+            default_value= list_unpacker(sg.user_settings_get_entry("-path_customer-", [])), size=(30, 1), key="customer info location"), sg.FileBrowse(), sg.Button("Clear History", key = "Clear History customer")],
+        [sg.Text("output folder", size=(12,1)), sg.Combo(sorted(sg.user_settings_get_entry("-path_output-", [])), 
+            default_value= list_unpacker(sg.user_settings_get_entry("-path_output-", [])), size=(30, 1), key="output folder location"), sg.FolderBrowse(), sg.Button("Clear History", key = "Clear History output")],
         [sg.Text("")],
-    #    [sg.Text("Output folder", size=(12,1)), sg.Input(key= "Output folder location"), sg.FolderBrowse()],    
-    #    [sg.Text("Log file", size=(12,1)), sg.InputText(key= "Log file location"), sg.FolderBrowse()],
-    #    [sg.Text("Ordered items", size=(12,1)), sg.InputText(key= "Ordered items location"), sg.FileBrowse()],
         [sg.Button("Save", bind_return_key=True), sg.Button("Clear"), sg.Exit()]
-
     ]
 
 
     #Combine the tabs into a generals layout of the UI
     layout = [
-        
         [sg.TabGroup([[sg.Tab("Input Elements", Input_Elements),
-                    sg.Tab("File pathways", Settings)]], key="-TAB GROUP-", expand_x=True, expand_y=True)],
-            
+                    sg.Tab("File pathways", Settings)]], key="-TAB GROUP-", expand_x=True, expand_y=True)],  
     ]
 
     #Start the program window
@@ -147,7 +207,7 @@ def JETA_Packing_list_maker():
             sg.user_settings_set_entry(clear_dict[event], [])
             window[folder_dict[clear_dict[event]]].update(values=[], value="")
             continue
-         
+        
         if event == "Clear" or event == "Clear3":
             for key in values:
                 if "Browse" in key or key == '-TAB GROUP-':
@@ -156,43 +216,75 @@ def JETA_Packing_list_maker():
             continue
         
         if event == "Submit" or event == "Enter":
+            if values["customer name"] not in customer_dic_names["NAME"] or values["customer name"] == "":
+                sg.popup_auto_close("\nThe customer name you've given is not in the database.", keep_on_top=True)
+                continue
+            
+            #Create customer_info_dict of the selected customer
+            for record in customer_info_dict_records:
+                if record["NAME"] == values["customer name"]:
+                    customer_info_dict = record
+                    break
+            
+            for key in customer_input_dict:
+                customer_info_dict[key] = values[customer_input_dict[key]]            
+            
             #Read in the log file
-                 
             #for key in folder_dict:
             #    if values[folder_dict[key]] == "":
-            #        values[folder_dict[key]] = base_dir / file_name
+            #        values[folder_dict[key]] = base_dir / file_name_dict[]
             
             #Temporary error workaround if location is not given
-            if values["Log file location"] == "":
-                values["Log file location"] = base_dir / "Packing list log.xlsx"
+            if values["log file location"] == "":
+                values["log file location"] = base_dir / "Packing list log.xlsx"
             
-            excel_path = values["Log file location"] 
             
-            df = pd.read_excel(excel_path)            
-            
+            try:
+                excel_path = values["log file location"] 
+                df = pd.read_excel(excel_path)
+            except:
+                sg.popup_auto_close("Couldn't open log file!", keep_on_top=True)
+                continue
             #create localS copy of values to manipulate into excel data
-            Excel_Data = values.copy()
+            log_data = values.copy()
             
             #Check which method is selected and add it to the output file
-            if Excel_Data["dry ice"] == True:
-                Excel_Data["Shipping method"] = "dry ice"
-            elif Excel_Data["ambient"] == True:
-                Excel_Data["Shipping method"] = "ambient"
+            if values["dry ice"] == True:
+                customer_info_dict["SHIPPING_WARNING"] = "!!! ALL ITEMS NEED TO BE STORED AT -20°C UPON ARRIVAL !!!"
+                log_data["shipping method"] = "dry ice"
+                customer_info_dict["shipping method"] = "dry ice"
+            elif values["ambient"] == True:
+                customer_info_dict["SHIPPING_WARNING"] = "STORE AT AMBIENT TEMPERATURE: +15⁰C to +30⁰C"
+                log_data["shipping method"] = "ambient"
+                customer_info_dict["shipping method"] = "ambient"
             
             #Remove unwanted data from values dictionary
-            keys_to_remove = ["Output folder location", "Log file location", "Ordered items location", "-TAB GROUP-", "Browse", "Browse0", "Browse1",  "Browse2", "dry ice", "ambient", "Customer info location"]
+            keys_to_remove = ["output folder location", "log file location", "ordered items location", "-TAB GROUP-", "Browse", "Browse0", "Browse1",  "Browse2", "dry ice", "ambient", "customer info location"]
             for key in keys_to_remove:
-                del Excel_Data[key]
+                del log_data[key]
             
             #add data to excel file
-            Excel_Data["date"] = current_time
-            Excel_Data["Save location"] = excel_path #Double save location index addition
-            df = pd.concat([df, pd.DataFrame(Excel_Data,index=[0])], ignore_index=True)
+            log_data["date"] = current_time
+            log_data["Save location"] = values["output folder location"] #Double save location index addition
+            df = pd.concat([df, pd.DataFrame(log_data, index=[0])], ignore_index=True)
             df.to_excel(excel_path, index=False)
-            break
+            #log FILE SAVED##########################
+            
+            
+            doc = DocxTemplate(base_dir / "Mother-packing-list.docx")
+            #create_packinglistsheet(customer_info_dict, word_template_path, ordered_items_path, output_dir)
+            
+            try:
+                create_packinglistsheet(customer_info_dict, doc, create_table(doc, values["ordered items location"], values["customer name"]), values["output folder location"])
+            except:
+                sg.popup_auto_close("Couldn't create packing list!", keep_on_top=True)
+                continue
+                
+            sg.popup_auto_close("Packing list has been created!", keep_on_top=True)
+            continue
             
     window.close()
-    exit()
+    return
 
 #start the application or not    
 JETA_Packing_list_maker()
