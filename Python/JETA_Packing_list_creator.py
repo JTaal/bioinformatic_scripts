@@ -5,24 +5,20 @@ import pandas as pd
 from os import makedirs
 from pathlib import Path
 from barcode import EAN13
-from docxtpl import DocxTemplate, InlineImage
 from barcode.writer import ImageWriter
+from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Mm
-from pathlib import Path
-from docxtpl import DocxTemplate
 
 #sg.theme_previewer()
 
 def isNaN(num):
     return num != num
 
-def create_barcode(number_string):
+def create_barcode(number_string):   
     base_dir = Path(__file__).parent / "barcodes"
     makedirs(base_dir, exist_ok=True)
     barcode = EAN13(number_string, writer=ImageWriter())
-    barcode.save(base_dir/number_string)
-    number_filename = number_string + ".png"
-    return str(base_dir/number_filename)
+    return barcode.save(base_dir/number_string)
 
 def create_packinglistsheet(customer_info_dict , doc, order_table_dict, output_dir):
     #Create dates and insert into the input dict
@@ -34,7 +30,6 @@ def create_packinglistsheet(customer_info_dict , doc, order_table_dict, output_d
     #Merge info with table 
     context = customer_info_dict | order_table_dict
     #Create packinglist from motherpacking list and input info
-
     #filter out dead values and insert nothing into them
     for key in context:
         if isNaN(context[key]):
@@ -48,43 +43,58 @@ def create_table(doc, Pathway, customername):
     row = {}
     tbl_contents = []
     
-    order_df = pd.read_excel(Pathway, sheet_name="order")
-    order_list = order_df.to_dict(orient="records")
-    
-    if customername.lower() == "turku":
-        turku = "Build in turkus requirements here"    
+    try:
+        order_df = pd.read_excel(Pathway, sheet_name="order")
+        order_list = order_df.to_dict(orient="records")
+    except: 
+        sg.popup_auto_close("Couldn't open the order file", keep_on_top=True)
+        context = {}
+        return context
     else:
         for record in order_list:
-            row["cols"] = [InlineImage(doc, create_barcode(str(record["Barcode"])), 
-                            width=Mm(30), height=Mm(13.2)), record["REF"], 
+            for key in record:
+                if isNaN(record[key]):
+                    record[key] = ""
+            #Create default table layout        
+            if (type(record["Barcode"]) == str or type(record["Barcode"]) == float) and record["Barcode"] != "":
+                record["Barcode"] = str(int(float(record["Barcode"])))
+            row["cols"] = [ record["Barcode"],
+                            record["REF"], 
                             record["Name"], 
                             record["Description"], 
                             record["Category"], 
                             record["LOT"], 
                             record["Expiration date"], 
-                            str(record["Qty"]).split("[")[0], 
-                            str(record["Qty"]).split("[")[0], 
+                            int(str(record["Qty"]).split("[")[0]), 
+                            int(str(record["Qty"]).split("[")[0]), 
                             "0"
                             ]
-            tbl_contents.append(row.copy())
-        col_labels = ["Barcode", "REF", "Name", "Description", "Unit", "Lot No.", "Expiry date", "Quantity Ordered", "Quantity Shipped", "Back-order"]
-        
+            #Change configuration for Turku
+            if customername.lower() == "turku":
+                row_list = row["cols"]
+                if record["Item code"] == "":
+                    row_list.insert(1, record["Item code"])
+                else:        
+                    row_list.insert(1, int(record["Item code"]))
+                    
+            try:
+                if record["Barcode"] != "": 
+                    create_barcode(str(record["Barcode"]))
+                    row["cols"][0] = InlineImage(doc, create_barcode(record["Barcode"]), width=Mm(30), height=Mm(13.2))
+                tbl_contents.append(row.copy())
+            except:
+                tbl_contents.append(row.copy())
+        #Create table headers and finalise function to return the context
+        if customername.lower() == "turku":
+            col_labels = ["Barcode", "Item code","REF", "Name", "Description", "Unit", "Lot No.", "Expiry date", "Quantity Ordered", "Quantity Shipped", "Back-order"]
+        #elif other customer exceptions:
+        else:
+            col_labels = ["Barcode", "REF", "Name", "Description", "Unit", "Lot No.", "Expiry date", "Quantity Ordered", "Quantity Shipped", "Back-order"]
     context = {"col_labels" : col_labels, "tbl_contents": tbl_contents}
     return context
 
 
 def JETA_Packing_list_maker():
-    """
-    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            initial input 
-    
-    """
-    
-    
-    file_name_dict = {"log" : "Packing list log.xlsx", 
-    "customer" : "JETA Packing list customer info.xlsx",
-    "items" : "Order file.xlsx",}
-    
     """
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             functions 
@@ -100,7 +110,7 @@ def JETA_Packing_list_maker():
     
     """
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            GUI setup
+            GUI setup and functionalities
     
     """
     
@@ -121,20 +131,16 @@ def JETA_Packing_list_maker():
     base_dir = Path(__file__).parent / "required files"
     os.makedirs(base_dir, exist_ok=True)
     
-    #Defaultpathways
-    customer_default_pathway = base_dir / file_name_dict["customer"]
-    #print("\n\n\ncustomer_path:!!!", customer_path, type(customer_path))
-    
     #Create dictionary list for customer names
-    customer_path = list_unpacker(sg.user_settings_get_entry("-path_customer-", [customer_default_pathway])) 
-
+    customer_path = list_unpacker(sg.user_settings_get_entry("-path_customer-", [])) 
+    
     try:
         if type(customer_path) == str:
             customerdf = pd.read_excel(customer_path)
             customer_info_dict_records = customerdf.to_dict(orient="records")
             customer_dic_names = customerdf.to_dict(orient="list")
         elif type(customer_path) == list:
-            sg.popup("customer pathway settings are empty.\nPlease select correct customer pathway and restart.", keep_on_top=True)
+            sg.popup("Customer pathway settings are empty.\nPlease select correct customer pathway and restart.", keep_on_top=True)
             customer_dic_names = {"NAME": ""}
     except:
         sg.popup("Couldn't load customer information!", keep_on_top=True)
@@ -150,7 +156,7 @@ def JETA_Packing_list_maker():
         [sg.Text("customer", size=(12,1)), sg.Combo(customer_dic_names["NAME"], key="customer name", size=(20, 1))],
         [sg.Text("PO Nr.", size=(12,1)), sg.InputText(key= "PO", size=(40, 1))],
         [sg.Text("Invoice Nr.", size = (12,1)), sg.InputText(key="invoice", size=(40, 1), default_text= default_invoice_number)],
-        [sg.Text("Description", size = (12,1)), sg.Combo(["Medical kit", "Assays", "Plates"] ,key="description", size=(38, 1))],
+        [sg.Text("Description", size = (12,1)), sg.Combo(["Medical kit", "QTRACE Kit", "QTRACE Assays","Assays", "Plates", "EFS Order", "Hospital Order"] ,key="description", size=(38, 1))],
         [sg.Text("Shipping method", size = (20,1)), sg.Radio("Ambient", "RadioDemo", default=True, size=(10,1), key="ambient"), sg.Radio("Dry Ice", "RadioDemo", default=False, size=(10,1), key="dry ice")],
         [sg.Text("")],
         [sg.Submit(), sg.Button("Clear"), sg.Exit()]
@@ -274,11 +280,12 @@ def JETA_Packing_list_maker():
             doc = DocxTemplate(base_dir / "Mother-packing-list.docx")
             #create_packinglistsheet(customer_info_dict, word_template_path, ordered_items_path, output_dir)
             
-            try:
-                create_packinglistsheet(customer_info_dict, doc, create_table(doc, values["ordered items location"], values["customer name"]), values["output folder location"])
-            except:
-                sg.popup_auto_close("Couldn't create packing list!", keep_on_top=True)
-                continue
+            #try:
+            create_packinglistsheet(customer_info_dict, doc, create_table(doc, values["ordered items location"], values["customer name"]), values["output folder location"])
+            #except:
+            #    traceback.print_exc()
+            #    sg.popup_auto_close("Couldn't create packing list!", keep_on_top=True)
+            #    continue
                 
             sg.popup_auto_close("Packing list has been created!", keep_on_top=True)
             continue
@@ -286,5 +293,11 @@ def JETA_Packing_list_maker():
     window.close()
     return
 
-#start the application or not    
-JETA_Packing_list_maker()
+#start the application
+while True:
+    try:
+        JETA_Packing_list_maker()
+    except PermissionError:
+        sg.popup_auto_close("Permission error!\nPlease close all relevant documents.", keep_on_top=True)
+        continue
+    break
