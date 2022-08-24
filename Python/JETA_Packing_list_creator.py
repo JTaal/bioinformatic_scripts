@@ -12,6 +12,15 @@ from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Mm
 
 #sg.theme_previewer()
+#Set default pathway for user settings inside of the folder script is executed from
+def user_settings(filename = "user_settings.json", path = os.getcwd(), clear = False):
+    sg.user_settings_filename(filename, path=path)
+    if clear == True:
+        clear_dict = {"Clear History log": "-path_log-", "Clear History order": "-path_order-", "Clear History customer": "-path_customer-", "Clear History output": "-path_output-", "Clear History mother": "-path_mother-"}
+        for key in clear_dict:
+            sg.user_settings_set_entry(clear_dict[key], [])
+        print("Clearing setting files executed!")
+    return
 
 def True_or_False_random():
     nr = random()
@@ -45,7 +54,7 @@ def create_packinglistsheet(customer_info_dict , doc, order_table_dict, output_d
             context.update({key : ""})
     
     doc.render(context)
-    doc.save(output_dir + "\\" +  today + " Packing list for " + customer_info_dict["NAME"] + " order " + customer_info_dict["PO"] + shipping_method + ".docx")
+    doc.save(output_dir + "\\" +  today + " Packing list for " + customer_info_dict["DISPLAY_NAME"] + " order " + customer_info_dict["PO"] + shipping_method + ".docx")
     return
 
 def create_table(doc, Pathway, customername):   
@@ -124,6 +133,9 @@ def JETA_Packing_list_maker():
     #Create theme
     sg.theme("DarkTeal9")
     
+    #Create settings location or clear settings
+    user_settings(filename= "user_settings.json", path = os.curdir, clear=False)
+
     #Create dictionaries to loop through pathways while clearing and saving
     clear_dict = {"Clear History log": "-path_log-", "Clear History order": "-path_order-", "Clear History customer": "-path_customer-", "Clear History output": "-path_output-", "Clear History mother": "-path_mother-"}
     folder_dict = {"-path_log-": "log file location", "-path_order-": "ordered items location", "-path_customer-": "customer info location", "-path_output-": "output folder location", "-path_mother-": "mother packing list location"}
@@ -131,6 +143,7 @@ def JETA_Packing_list_maker():
     
     # in case you load in impossible setting, use below to clear all the saved pathways
     #
+    #clear_dict = {"Clear History log": "-path_log-", "Clear History order": "-path_order-", "Clear History customer": "-path_customer-", "Clear History output": "-path_output-", "Clear History mother": "-path_mother-"}
     #for event in clear_dict:
     #    sg.user_settings_set_entry(clear_dict[event], [])
     
@@ -148,11 +161,14 @@ def JETA_Packing_list_maker():
             customer_dic_names = customerdf.to_dict(orient="list")
         elif type(customer_path) == list:
             sg.popup("Customer pathway settings are empty.\nPlease select correct customer pathway and restart.", keep_on_top=True)
-            customer_dic_names = {"NAME": ""}
+            customer_dic_names = {"DISPLAY_NAME": ""}
     except Exception as exception:
         sg.popup("Couldn't load customer information!\n\n" + str(exception), keep_on_top=True)
-        customer_dic_names = {"NAME": ""}
+        customer_dic_names = {"DISPLAY_NAME": ""}
     
+    print(customer_dic_names)
+
+
     #Create the default invoicing number
     current_time = str(datetime.datetime.today())
     default_invoice_number = current_time[2:4] + current_time[5:7] + current_time[8:10]
@@ -160,7 +176,7 @@ def JETA_Packing_list_maker():
     #Setup the layout of the UI tabs
     Input_Elements = [
         [sg.Text("")],
-        [sg.Text("Customer", size=(12,1)), sg.Combo(customer_dic_names["NAME"], key="customer name", size=(20, 1))],
+        [sg.Text("Customer", size=(12,1)), sg.Combo(customer_dic_names["DISPLAY_NAME"], key="customer name", size=(20, 1))],
         [sg.Text("PO Nr.", size=(12,1)), sg.InputText(key= "PO", size=(40, 1))],
         [sg.Text("Invoice Nr.", size = (12,1)), sg.InputText(key="invoice", size=(40, 1), default_text= default_invoice_number)],
         [sg.Text("Description", size = (12,1)), sg.Combo(["Medical kit", "QTRACE Kit", "QTRACE Assays","Assays", "Plates", "EFS Order", "Hospital Order"] ,key="description", size=(38, 1))],
@@ -205,14 +221,14 @@ def JETA_Packing_list_maker():
     ]
 
     #Start the program window
-    global window
-    window = sg.Window("JETA Packing list creator", layout, grab_anywhere=True, keep_on_top=True,  resizable=True ,finalize=True, use_custom_titlebar=True)#, icon=.ICO file used as icon)
-    window.TKroot.minsize(550,300)
+    global JETA_window
+    JETA_window = sg.Window("JETA Packing list creator", layout, grab_anywhere=True, keep_on_top=True,  resizable=True ,finalize=True, use_custom_titlebar=True)#, icon=.ICO file used as icon)
+    JETA_window.TKroot.minsize(550,300)
     
     
     #Start an infinite loop to check for user input
     while True:
-        event, values = window.read()
+        event, values = JETA_window.read()
         #print(event, type(event))
         if event == sg.WIN_CLOSED or event == "Exit" or event == "Exit4" or event == "Exit8":
             break   
@@ -234,24 +250,24 @@ def JETA_Packing_list_maker():
         
         if "Clear History" in event:
             sg.user_settings_set_entry(clear_dict[event], [])
-            window[folder_dict[clear_dict[event]]].update(values=[], value="")
+            JETA_window[folder_dict[clear_dict[event]]].update(values=[], value="")
             continue
         
         if event == "Clear" or event == "Clear3" or event == "Clear7":
             for key in values:
                 if "Browse" in key or key == "-TAB GROUP-" or key == "Grip":
                     continue
-                window[key]("")
+                JETA_window[key]("")
             continue
         
         if event == "Submit" or event == "Enter":
-            if values["customer name"] not in customer_dic_names["NAME"] or values["customer name"] == "":
+            if values["customer name"] not in customer_dic_names["DISPLAY_NAME"] or values["customer name"] == "":
                 sg.popup_auto_close("The customer name you've given is not in the database.", keep_on_top=True)
                 continue
             
             #Create customer_info_dict of the selected customer
             for record in customer_info_dict_records:
-                if record["NAME"] == values["customer name"]:
+                if record["DISPLAY_NAME"] == values["customer name"]:
                     customer_info_dict = record
                     break
             
@@ -320,7 +336,7 @@ def JETA_Packing_list_maker():
             sg.popup("Packing list has been created!","(It took {} seconds!)".format(round(end-start, 2)) , keep_on_top=True)
             continue
             
-    window.close()
+    JETA_window.close()
     return
 
 #start the application
@@ -329,6 +345,6 @@ while True:
         JETA_Packing_list_maker()
     except PermissionError:
         sg.popup("Permission error!","Please close all relevant documents.", keep_on_top=True)
-        window.close()
+        JETA_window.close()
         continue
     break

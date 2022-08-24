@@ -32,27 +32,35 @@ while True:
     print(values)
     if event == sg.WIN_CLOSED or event == "Exit":
             break
+
     if event == "Clear":
        window["link"]("")
        window["output_path"]("")
+
     if event == "Clear History":
         sg.user_settings_set_entry("-output_path-", [])
         window["output_path"].update(values=[], value="")
+
     if event == "Download":
         sg.user_settings_set_entry("-output_path-", list(sg.user_settings_get_entry("-output_path-", []) + [values["output_path"] ]))
         link = values["link"]
         progress = ""
         yt = YouTube(link, on_progress_callback=progress)
+        
         if values["high quality"] == True:
             downloadtype = " High quality.mp4" 
             yd = yt.streams.get_highest_resolution()
+
         elif values["low quality"] == True:
             downloadtype = " low quality.mp4" 
             yd = yt.streams.get_lowest_resolution()
+
         elif values["mp3"] == True:
             downloadtype = " audio.mp3"    
             yd = yt.streams.get_audio_only()
+
         (sg.popup("Download has started!", keep_on_top=True), yd.download(values["output_path"], yt.title + downloadtype))
         sg.popup("Download complete!", keep_on_top=True)
+
 window.close()
 
