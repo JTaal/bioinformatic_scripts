@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-09-01T09:53:31.155Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="94v4NZdyhVET4meIE72j" version="20.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-01T09:53:41.490Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="R3BzYKVpTl93ADXv0x3z" version="20.2.7" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
-    <mxGraphModel dx="1787" dy="2924" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="4046" dy="4153" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -542,64 +542,50 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
-          <mxGeometry x="3165.5" y="-1750" width="70" height="100" as="geometry" />
+          <mxGeometry x="3273.66" y="-1740" width="70" height="100" as="geometry" />
         </mxCell>
         <mxCell id="I9-8Lr5WA-SxQid39z_8-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LbM7E7pDTFl8EJzXxvWG-5" target="LbM7E7pDTFl8EJzXxvWG-21">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="3201" y="-1540" />
-              <mxPoint x="3401" y="-1540" />
+              <mxPoint x="3309.16" y="-1530" />
+              <mxPoint x="3509.16" y="-1530" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-5" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VEP006 MultiTRACE Genotyping DNA Input Verification Protocol_Change Control&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
-          <mxGeometry x="3125.5" y="-1640" width="150" height="70" as="geometry" />
+          <mxGeometry x="3233.66" y="-1630" width="150" height="70" as="geometry" />
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-6" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=41;strokeWidth=2;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-7" target="LbM7E7pDTFl8EJzXxvWG-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-7" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
-          <mxGeometry x="3366" y="-1750" width="70" height="100" as="geometry" />
+          <mxGeometry x="3474.16" y="-1740" width="70" height="100" as="geometry" />
         </mxCell>
         <mxCell id="I9-8Lr5WA-SxQid39z_8-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LbM7E7pDTFl8EJzXxvWG-9" target="LbM7E7pDTFl8EJzXxvWG-21">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-9" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VEP007 MultiTRACE Genotyping Accuracy Verification Protocol_Change Control.&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
-          <mxGeometry x="3326.16" y="-1640" width="149.5" height="70" as="geometry" />
+          <mxGeometry x="3434.3199999999997" y="-1630" width="149.5" height="70" as="geometry" />
         </mxCell>
         <mxCell id="I9-8Lr5WA-SxQid39z_8-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LbM7E7pDTFl8EJzXxvWG-11" target="LbM7E7pDTFl8EJzXxvWG-21">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="3600" y="-1540" />
-              <mxPoint x="3401" y="-1540" />
+              <mxPoint x="3708.16" y="-1530" />
+              <mxPoint x="3509.16" y="-1530" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-11" value="GF010 Change Control MultiTRACE Genotyping Plates.doc" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
-          <mxGeometry x="3540" y="-1640" width="120" height="70" as="geometry" />
+          <mxGeometry x="3648.16" y="-1630" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-12" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=41;strokeWidth=2;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-13" target="LbM7E7pDTFl8EJzXxvWG-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-13" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
-          <mxGeometry x="3565.5" y="-1750" width="70" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-15" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="3800.91" y="-1499" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-15" value="" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
-          <mxGeometry x="3750.5" y="-1640" width="100" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-16" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=41;strokeWidth=2;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-17" target="LbM7E7pDTFl8EJzXxvWG-15" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-17" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
-          <mxGeometry x="3765.5" y="-1750" width="70" height="100" as="geometry" />
+          <mxGeometry x="3673.66" y="-1740" width="70" height="100" as="geometry" />
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-21" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;/div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Perform experiment as written then assert whether any design changes have to be made&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="3321" y="-1463" width="160" height="160" as="geometry" />
+          <mxGeometry x="3429.16" y="-1453" width="160" height="160" as="geometry" />
         </mxCell>
         <mxCell id="I9-8Lr5WA-SxQid39z_8-1" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;QTRACE Genotyping Plate Batch Record Supplement&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="2320" y="-815" width="131" height="60" as="geometry" />
