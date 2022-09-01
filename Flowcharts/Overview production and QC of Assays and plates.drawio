@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-01T08:48:46.414Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="R8YIootCYQX6zo_dr6B_" version="20.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-01T09:52:07.074Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="wb_xf35hCAyoVwBiVg6E" version="20.2.7" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
     <mxGraphModel dx="3162" dy="3672" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -547,6 +547,10 @@
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-5" target="LbM7E7pDTFl8EJzXxvWG-21" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="3200.91" y="-1499" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3201" y="-1540" />
+              <mxPoint x="3300" y="-1540" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-5" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VEP006 MultiTRACE Genotyping DNA Input Verification Protocol_Change Control&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
@@ -558,14 +562,22 @@
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-7" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
           <mxGeometry x="3366" y="-1750" width="70" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-9" target="LbM7E7pDTFl8EJzXxvWG-18" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="LbM7E7pDTFl8EJzXxvWG-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-9" target="LbM7E7pDTFl8EJzXxvWG-21" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3400.91" y="-1499" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3401" y="-1540" />
+              <mxPoint x="3300" y="-1540" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-9" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VEP007 MultiTRACE Genotyping Accuracy Verification Protocol_Change Control.&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="3326.16" y="-1640" width="149.5" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-11" target="LbM7E7pDTFl8EJzXxvWG-19" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="LbM7E7pDTFl8EJzXxvWG-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3600.91" y="-1499" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-11" value="" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="3550.5" y="-1640" width="100" height="70" as="geometry" />
@@ -576,8 +588,10 @@
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-13" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
           <mxGeometry x="3565.5" y="-1750" width="70" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-15" target="LbM7E7pDTFl8EJzXxvWG-20" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="LbM7E7pDTFl8EJzXxvWG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3800.91" y="-1499" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-15" value="" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="3750.5" y="-1640" width="100" height="60" as="geometry" />
@@ -588,17 +602,8 @@
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-17" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;.WORD&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;sketch=1;fillColor=#D9F5FC;strokeColor=#6c8ebf;shadow=1;gradientDirection=south;gradientColor=#7ea6e0;" parent="1" vertex="1">
           <mxGeometry x="3765.5" y="-1750" width="70" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-18" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+/- pattern for 8/8 DNAs tested must match&lt;br&gt;expected pattern&lt;/div&gt;&lt;span style=&quot;font-size: 14px;&quot; lang=&quot;EN-US&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;No more than 1&lt;br&gt;Atypical result/DNA&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="3320.91" y="-1499" width="160" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-19" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+/- pattern for 8/8 DNAs tested must match&lt;br&gt;expected pattern&lt;/div&gt;&lt;span style=&quot;font-size: 14px;&quot; lang=&quot;EN-US&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;No more than 1&lt;br&gt;Atypical result/DNA&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="3520.91" y="-1499" width="160" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-20" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+/- pattern for 8/8 DNAs tested must match&lt;br&gt;expected pattern&lt;/div&gt;&lt;span style=&quot;font-size: 14px;&quot; lang=&quot;EN-US&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;No more than 1&lt;br&gt;Atypical result/DNA&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="3720.91" y="-1499" width="160" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-21" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+/- pattern for 8/8 DNAs tested must match&lt;br&gt;expected pattern&lt;/div&gt;&lt;span style=&quot;font-size: 14px;&quot; lang=&quot;EN-US&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;No more than 1&lt;br&gt;Atypical result/DNA&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="3120.5" y="-1499" width="160" height="160" as="geometry" />
+        <mxCell id="LbM7E7pDTFl8EJzXxvWG-21" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;/div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Perform experiment as written then assert whether any design changes have to be made&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="3220" y="-1465" width="160" height="160" as="geometry" />
         </mxCell>
         <mxCell id="I9-8Lr5WA-SxQid39z_8-1" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;QTRACE Genotyping Plate Batch Record Supplement&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="2320" y="-815" width="131" height="60" as="geometry" />
