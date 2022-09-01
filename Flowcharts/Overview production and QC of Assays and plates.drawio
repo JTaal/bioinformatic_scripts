@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-09-01T09:53:41.490Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="R3BzYKVpTl93ADXv0x3z" version="20.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-01T09:54:21.591Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="1Pdpvptiq6V1N89aeI7_" version="20.2.7" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
-    <mxGraphModel dx="4046" dy="4153" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3162" dy="3672" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -587,8 +587,8 @@
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-21" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;/div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Perform experiment as written then assert whether any design changes have to be made&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=1;shadow=0;glass=0;sketch=0;fontFamily=Helvetica;fontSize=12;strokeColor=#B09500;fillColor=#e3c800;gradientDirection=north;strokeWidth=1;fontColor=#000000;gradientColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="3429.16" y="-1453" width="160" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="I9-8Lr5WA-SxQid39z_8-1" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;QTRACE Genotyping Plate Batch Record Supplement&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" vertex="1" parent="1">
-          <mxGeometry x="2320" y="-815" width="131" height="60" as="geometry" />
+        <mxCell id="I9-8Lr5WA-SxQid39z_8-1" value="&lt;div style=&quot;&quot;&gt;Filled in Quality control forum&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="2320" y="-815" width="131" height="45" as="geometry" />
         </mxCell>
         <mxCell id="I9-8Lr5WA-SxQid39z_8-2" style="edgeStyle=orthogonalEdgeStyle;shape=link;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=41;strokeWidth=2;" edge="1" parent="1" source="I9-8Lr5WA-SxQid39z_8-3" target="I9-8Lr5WA-SxQid39z_8-1">
           <mxGeometry relative="1" as="geometry" />
