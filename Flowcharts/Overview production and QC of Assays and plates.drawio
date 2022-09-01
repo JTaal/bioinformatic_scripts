@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-01T09:52:29.500Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="4A_kM-U9InthKDjWIQQD" version="20.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-01T09:52:36.745Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="Ss8yyi_9WANUfPn7TN9v" version="20.2.7" type="github">
   <diagram name="Page-1" id="82e54ff1-d628-8f03-85c4-9753963a91cd">
     <mxGraphModel dx="3162" dy="3672" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -574,9 +574,13 @@
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-9" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;VEP007 MultiTRACE Genotyping Accuracy Verification Protocol_Change Control.&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
           <mxGeometry x="3326.16" y="-1640" width="149.5" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="LbM7E7pDTFl8EJzXxvWG-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-11" edge="1">
+        <mxCell id="LbM7E7pDTFl8EJzXxvWG-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=14;strokeWidth=1;" parent="1" source="LbM7E7pDTFl8EJzXxvWG-11" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="3600.91" y="-1499" as="targetPoint" />
+            <mxPoint x="3300" y="-1470" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3600" y="-1540" />
+              <mxPoint x="3300" y="-1540" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="LbM7E7pDTFl8EJzXxvWG-11" value="GF010 Change Control MultiTRACE Genotyping Plates.doc" style="text;whiteSpace=wrap;html=1;align=center;strokeColor=default;rounded=1;glass=0;shadow=0;sketch=0;fillColor=default;" parent="1" vertex="1">
