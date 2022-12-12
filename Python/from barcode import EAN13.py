@@ -1,5 +1,6 @@
 from os import makedirs
 from pathlib import Path
+from re import A
 from barcode import EAN13
 from barcode.writer import ImageWriter
 import pandas as pd

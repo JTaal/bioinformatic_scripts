@@ -32,3 +32,8 @@ a = np.array([[1,2,3,4,5],
 b4 = a[2:, :] # row 2 onwards and all columns
 print(b4)
 print(b4.shape)
+
+print(a)
+
+
+print(a[1:2,1:4])

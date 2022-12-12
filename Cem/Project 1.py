@@ -1,30 +1,32 @@
-from struct import pack
-print("hello world")
-print("I","own","two","apples")
-print("I","own",2,"apples")
-print("I can\'t")
-print("I can\\\'t")
-print(1)
-print(+1)
-print("1")
-print("+1")
-print("1,000,000,000")
-print(13.0)
-print((431/100)*100)
-print(15+4)
-print(15-4)
-print(15/4)
-print(15*4)
-print(119//4)
-print(117**4)
-print(15%4)
-print(5*2-3+4/2)
-print("Hello"+("World"))
-print(3*"hello")
-print("goodbye"*3)
-print(int(15/4))
-print(float(15/4))
-print(str(15/4))
-print("I own" + " apples.")
-print( (24.95/100*60)*60+(59*0.75)+3 )
-print( ((2*3)/4 + (5-6/7)*8 )
+
+
+x = 2.1
+y = ' 3 '
+z = int( x )
+print( z )
+print( int( y ) )
+print( print( "Hello , world!" ) )
+print(10%4)
+
+
+def kut(a, b):
+    return a ** b
+
+
+
+
+
+
+
+print(kut(2,4), pow(2,4))
+
+list = [1,45,7685,64654,6456]
+
+print("List length: ",len(list))
+
+def avg(list, total = 0):
+    for item in list:
+        total += item
+    return total/len(list)
+
+print(avg(list))

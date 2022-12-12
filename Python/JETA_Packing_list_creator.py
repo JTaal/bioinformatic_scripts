@@ -5,6 +5,7 @@ import PySimpleGUI as sg
 import pandas as pd
 from time import time
 from os import makedirs
+from os.path import isfile
 from pathlib import Path
 from barcode import EAN13
 from barcode.writer import ImageWriter
@@ -12,14 +13,14 @@ from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Mm
 
 #sg.theme_previewer()
-#Set default pathway for user settings inside of the folder script is executed from
-def user_settings(filename = "user_settings.json", path = os.getcwd(), clear = False):
+#Set default pathway for user settings inside of the folder the script is executed from
+def user_settings(filename = "user_settings.json", path = os.path.dirname(os.path.realpath(__file__)), clear = False):    
+    #if os.path.exists(os.path.join(path,filename))== False: #THIS LINE WILL WILL CREATE A DEFAULT SETTINGS FILE IF USED WHEN USER_SETTINGS.json ALREADY EXIST IN THE FOLDER. SO DON'T USE UNLESS YOU FIX IT
     sg.user_settings_filename(filename, path=path)
     if clear == True:
         clear_dict = {"Clear History log": "-path_log-", "Clear History order": "-path_order-", "Clear History customer": "-path_customer-", "Clear History output": "-path_output-", "Clear History mother": "-path_mother-"}
         for key in clear_dict:
             sg.user_settings_set_entry(clear_dict[key], [])
-        print("Clearing setting files executed!")
     return
 
 def True_or_False_random():
@@ -82,15 +83,14 @@ def create_table(doc, Pathway, customername):
                             record["Description"], 
                             record["Category"], 
                             record["LOT"], 
-                            record["Expiration date"], 
+                            record["Expiration_date"], 
                             int(str(record["Qty"]).split("[")[0]), 
                             int(str(record["Qty"]).split("[")[0]), 
                             "0"
                             ]
             #Change configuration for Turku
             if customername.lower() == "turku":
-                row_list = row["cols"]
-                row_list.insert(1, record["Item code"])
+                row["cols"].insert(2, record["Item_code"])
             #if customername.lower() == "exception customer":
             #    special_case = "Whatever you need that is special"
             try:
@@ -101,14 +101,12 @@ def create_table(doc, Pathway, customername):
                 tbl_contents.append(row.copy())
         #Create table headers and finalise function to return the context
         if customername.lower() == "turku":
-            col_labels = ["Barcode", "Item code","REF", "Name", "Description", "Unit", "Lot No.", "Expiry date", "Quantity Ordered", "Quantity Shipped", "Back-order"]
+            col_labels = ["Barcode", "REF", "Item code", "Name", "Description", "Unit", "Lot No.", "Expiry date", "Quantity Ordered", "Quantity Shipped", "Back-order"]
         #elif other customer exceptions:
         else:
             col_labels = ["Barcode", "REF", "Name", "Description", "Unit", "Lot No.", "Expiry date", "Quantity Ordered", "Quantity Shipped", "Back-order"]
     context = {"col_labels" : col_labels, "tbl_contents": tbl_contents}
-    
     return context
-
 
 def JETA_Packing_list_maker():
     """
@@ -123,7 +121,6 @@ def JETA_Packing_list_maker():
             #print("list length -1 = " ,len(folder_list)-1, folder_list[len(folder_list)-1], "Folder list: ", folder_list )
             return folder_list[len(folder_list)-1]        
 
-    
     """
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             GUI setup and functionalities
@@ -134,7 +131,7 @@ def JETA_Packing_list_maker():
     sg.theme("DarkTeal9")
     
     #Create settings location or clear settings
-    user_settings(filename= "user_settings.json", path = os.curdir, clear=False)
+    user_settings(filename= "user_settings.json", path = os.path.dirname(os.path.realpath(__file__)), clear=False)
 
     #Create dictionaries to loop through pathways while clearing and saving
     clear_dict = {"Clear History log": "-path_log-", "Clear History order": "-path_order-", "Clear History customer": "-path_customer-", "Clear History output": "-path_output-", "Clear History mother": "-path_mother-"}
@@ -166,9 +163,6 @@ def JETA_Packing_list_maker():
         sg.popup("Couldn't load customer information!\n\n" + str(exception), keep_on_top=True)
         customer_dic_names = {"DISPLAY_NAME": ""}
     
-    print(customer_dic_names)
-
-
     #Create the default invoicing number
     current_time = str(datetime.datetime.today())
     default_invoice_number = current_time[2:4] + current_time[5:7] + current_time[8:10]
@@ -199,7 +193,6 @@ def JETA_Packing_list_maker():
         [sg.Button("Save", bind_return_key=True), sg.Button("Clear"), sg.Exit()]
     ]
 
-
     Output_pathway = [
         [sg.Text("")],
         [sg.Text("")],
@@ -224,7 +217,6 @@ def JETA_Packing_list_maker():
     global JETA_window
     JETA_window = sg.Window("JETA Packing list creator", layout, grab_anywhere=True, keep_on_top=True,  resizable=True ,finalize=True, use_custom_titlebar=True)#, icon=.ICO file used as icon)
     JETA_window.TKroot.minsize(550,300)
-    
     
     #Start an infinite loop to check for user input
     while True:
@@ -278,19 +270,8 @@ def JETA_Packing_list_maker():
             #for key in folder_dict:
             #    if values[folder_dict[key]] == "":
             #        values[folder_dict[key]] = base_dir / file_name_dict[]
-            
-            #Temporary error workaround if location is not given
-            if values["log file location"] == "":
-                values["log file location"] = base_dir / "1. Packing list log.xlsx"
-            
-            
-            try:
-                excel_path = values["log file location"] 
-                df = pd.read_excel(excel_path)
-            except Exception as exception:
-                sg.popup_auto_close("Couldn't open log file!\n\n" + str(exception), keep_on_top=True)
-                continue
-            #create localS copy of values to manipulate into excel data
+
+            #create local copy of values to manipulate into excel data
             log_data = values.copy()
             
             #Check which method is selected and add it to the output file
@@ -307,18 +288,22 @@ def JETA_Packing_list_maker():
             keys_to_remove = ["output folder location", "log file location", "ordered items location", "-TAB GROUP-", "Browse", "Browse0", "Browse1",  "Browse2", "dry ice", "ambient", "customer info location", "Browse5", "mother packing list location", "Grip"]
             for key in keys_to_remove:
                 del log_data[key]
-            
-            #add data to excel file
-            log_data["date"] = current_time
-            log_data["Save location"] = values["output folder location"] #Double save location index addition
-            df = pd.concat([df, pd.DataFrame(log_data, index=[0])], ignore_index=True)
-            df.to_excel(excel_path, index=False)
-            #log FILE SAVED##########################
-            
-            if values["log file location"] == "":
-                values["log file location"] = base_dir / "1. Packing list log.xlsx"
 
-            if values["mother packing list location"] == "":
+            #Create and save a log file
+            if values["log file location"] == "" and isfile(base_dir / "1. Packing list log.xlsx"):
+                values["log file location"] = base_dir / "1. Packing list log.xlsx"    
+            try:
+                excel_path = values["log file location"]
+                df = pd.read_excel(excel_path)
+                log_data["date"] = current_time
+                log_data["Save location"] = values["output folder location"] #Double save location index addition
+                df = pd.concat([df, pd.DataFrame(log_data, index=[0])], ignore_index=True)
+                df.to_excel(excel_path, index=False)
+            except Exception as exception:
+                sg.popup_auto_close("Couldn't open log file!\n\n" + str(exception), keep_on_top=True)
+            #log FILE SAVED or ERROR CAUGHT##########################
+
+            if values["mother packing list location"] == "" and isfile(base_dir / "4. Mother-packing-list.docx"):
                 values["mother packing list location"] = base_dir / "4. Mother-packing-list.docx"
             
             doc = DocxTemplate(values["mother packing list location"])
