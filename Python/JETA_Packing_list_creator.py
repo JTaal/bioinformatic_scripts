@@ -15,6 +15,10 @@ from docx.shared import Mm
 #sg.theme_previewer()
 #Set default pathway for user settings inside of the folder the script is executed from
 def user_settings(filename = "user_settings.json", path = os.path.dirname(os.path.realpath(__file__)), clear = False):    
+    """
+    Sets the user_settings inside of the distribution folder 
+    and clears the settings if called
+    """
     #if os.path.exists(os.path.join(path,filename))== False: #THIS LINE WILL WILL CREATE A DEFAULT SETTINGS FILE IF USED WHEN USER_SETTINGS.json ALREADY EXIST IN THE FOLDER. SO DON'T USE UNLESS YOU FIX IT
     sg.user_settings_filename(filename, path=path)
     if clear == True:
@@ -24,6 +28,9 @@ def user_settings(filename = "user_settings.json", path = os.path.dirname(os.pat
     return
 
 def True_or_False_random():
+    """
+    Returns True or false with a distribution of 50%
+    """
     nr = random()
     if nr <= 0.5:
         return True
@@ -31,9 +38,16 @@ def True_or_False_random():
         return False 
 
 def isNaN(num):
+    """
+    Returns True if the variable is NaN
+    """
     return num != num
 
-def create_barcode(number_string):   
+def create_barcode(number_string):  
+    """
+    Creates an EAN13 barcode image
+    and saves it to the barcodes folder inside of the distribution folder
+    """ 
     base_dir = Path(__file__).parent / "barcodes"
     makedirs(base_dir, exist_ok=True)
     barcode = EAN13(number_string, writer=ImageWriter())
@@ -48,6 +62,7 @@ def create_packinglistsheet(customer_info_dict , doc, order_table_dict, output_d
 
     #Merge info with table 
     context = customer_info_dict | order_table_dict
+    
     #Create packinglist from motherpacking list and input info
     #filter out dead values and insert nothing into them
     for key in context:
@@ -62,6 +77,7 @@ def create_table(doc, Pathway, customername):
     row = {}
     tbl_contents = []
     
+    # try to open the order file and raise exception otherwise
     try:
         order_df = pd.read_excel(Pathway, sheet_name="order")
         order_list = order_df.to_dict(orient="records")
@@ -69,11 +85,14 @@ def create_table(doc, Pathway, customername):
         sg.popup_auto_close("Couldn't open the order file\n\n" + str(exception), keep_on_top=True)
         context = {}
         return context
+    
+    # Crea
     else:
         for record in order_list:
             for key in record:
                 if isNaN(record[key]):
                     record[key] = ""
+            
             #Create default table layout        
             if (type(record["Barcode"]) == str or type(record["Barcode"]) == float) and record["Barcode"] != "":
                 record["Barcode"] = str(int(float(record["Barcode"])))
@@ -88,23 +107,31 @@ def create_table(doc, Pathway, customername):
                             int(str(record["Qty"]).split("[")[0]), 
                             "0"
                             ]
+            
             #Change configuration for Turku
             if customername.lower() == "turku":
                 row["cols"].insert(2, record["Item_code"])
+            
+            # Extend use cases here for exceptions
             #if customername.lower() == "exception customer":
             #    special_case = "Whatever you need that is special"
+            
+            # Create barcodes and make an InlineImage object out of them
             try:
                 if record["Barcode"] != "":
                     row["cols"][0] = InlineImage(doc, create_barcode(str(record["Barcode"])), width=Mm(30), height=Mm(13.2))
                 tbl_contents.append(row.copy())
             except:
                 tbl_contents.append(row.copy())
+        
         #Create table headers and finalise function to return the context
         if customername.lower() == "turku":
             col_labels = ["Barcode", "REF", "Item code", "Name", "Description", "Unit", "Lot No.", "Expiry date", "Quantity Ordered", "Quantity Shipped", "Back-order"]
         #elif other customer exceptions:
         else:
             col_labels = ["Barcode", "REF", "Name", "Description", "Unit", "Lot No.", "Expiry date", "Quantity Ordered", "Quantity Shipped", "Back-order"]
+    
+    # return the context
     context = {"col_labels" : col_labels, "tbl_contents": tbl_contents}
     return context
 
@@ -115,6 +142,9 @@ def JETA_Packing_list_maker():
     
     """    
     def list_unpacker(folder_list):
+        """
+        Unpacks the last item in the folder_list from the usersettings
+        """
         if folder_list == []:
             return folder_list
         else:
