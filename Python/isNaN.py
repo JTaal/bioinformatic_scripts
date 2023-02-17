@@ -1,9 +1,7 @@
-
-
-nan = float("nan")
+# A standard isNaN function
 
 def isNaN(num):
     return num != num
 
-
-print(isNaN(nan))
+# nan = float("nan")
+# print(isNaN(nan))
