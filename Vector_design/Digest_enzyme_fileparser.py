@@ -6,8 +6,6 @@ from os.path import isfile, join
 #NO SPACES ALLOWED INSIDE THE NAMES! 
 #THE PROGRAM SEPERATES THE DOCUMENTS BASED ON SPACES
 
-
-
 #inputpath = input("Give folder:")
 inputpath = input("give folder:")
 
@@ -37,7 +35,6 @@ def DigestSplitter(inputpath, inputname, extension):
                 close()
 
 DigestSplitter(inputpath, inputname, extension)
-
 
 #for file in filesInFolder:
 #    if file == inputname:

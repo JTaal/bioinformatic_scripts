@@ -8,17 +8,17 @@ from Bio import SeqIO
 """
 #paths
 #inputpath = input("Give folder:")
-amplicon_filepath = r"C:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Amplicon sequences"
-controls_filepath = r"C:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Control sequences"
-digest_enzyme_filepath = r"C:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Digestion sites\Fermentas"
-output_path = r"C:\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 pJETA101\Amplicon FASTAS\Final sequence"
+amplicon_filepath = r"path\to\file_or_folder"
+controls_filepath = r"path\to\file_or_folder"
+digest_enzyme_filepath = r"path\to\file_or_folder"
+output_path = r"path\to\file_or_folder"
 
 #enzyme names
-enzyme_name_main = "XhoI" 
-enzyme_name_5_prime = "ApaI"
-enzyme_name_3_prime = "SacII"
-primer_sequence_5_prime = "CACCATTGGCAATGAGCGGTTC"
-primer_sequence_3_prime = "ACGTGGACATCCGCAAAGACCT"
+enzyme_name_main = "!" 
+enzyme_name_5_prime = "!"
+enzyme_name_3_prime = "!"
+primer_sequence_5_prime = "ACTG?"
+primer_sequence_3_prime = "ACTG?"
 
 """_______________Code______________________________________________________________________________________________________________________________________________
 """
