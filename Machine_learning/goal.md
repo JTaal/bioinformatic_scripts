@@ -1,4 +1,4 @@
-Based on the experimental design described in the GEO accession GSE99531, we can infer the following research goals and the corresponding steps taken to achieve them:
+Based on the experimental design described in the GEO accession GSE99531:
 
 ### Research Goals
 
@@ -38,5 +38,3 @@ Based on the experimental design described in the GEO accession GSE99531, we can
 6. **Data Interpretation and Hypothesis Formation**:
    - **Biological Significance**: Understanding the biological implications of the distinct PD-1 expression levels in CD8+ T cells in the context of NSCLC.
    - **Potential Therapeutic Avenues**: Exploring new strategies for enhancing the efficacy of PD-1 blockade therapy based on the findings.
-
-This study seems to be highly focused on translational research, aiming to bridge the gap between basic immunological understandings and clinical oncology, particularly in the realm of immunotherapy for lung cancer.
