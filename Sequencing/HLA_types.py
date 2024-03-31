@@ -6,12 +6,6 @@ path = input("give folder: ")
 filename = input("give filename: ")
 path = os.path.realpath(os.path.join(path, filename))
 
-# for testing purposes
-# Setup initial variables
-# path = r"C:\Users\jaspe\Dropbox (JETA)\JETA Team Folder\JETA\02 Research & Development\01 NanoTYPE"
-# filename = "HLA typings of interest.xlsx"
-# path = os.path.realpath(os.path.join(path, filename))
-
 # Read in the excel file into a pandas dataframe
 file = pd.read_excel(path)
 
